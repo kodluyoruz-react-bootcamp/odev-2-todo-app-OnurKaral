@@ -70,7 +70,7 @@ class App extends PureComponent {
         <TodoList
           listTodos={todoStatus(listTodos, status)}
           CompletedTodos={this.CompletedTodos}
-          removeTodo={this.deleteTodo}
+          deleteTodo={this.deleteTodo}
         />
         <Footer
           activeButton={status}
