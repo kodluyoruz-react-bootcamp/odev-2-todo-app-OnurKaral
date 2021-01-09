@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import TodoList from './components/TodoList'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import Footerinfo from './components/Footerinfo'
 import './index.css'
 
 const todoStatus = (listTodos = [], status = '', id) => {
@@ -55,14 +56,14 @@ class App extends PureComponent {
       }
       return item
     })
-    this.setState({
-      listTodos: updatedTodos
+    this.setState({ listTodos: updatedTodos
     })
   }
 
   render() {
     const { listTodos,status,} = this.state
     return (
+      <>
       <div className="todoapp">
         <Header
           addTodo={this.addTodos}
@@ -78,9 +79,12 @@ class App extends PureComponent {
           clearCompleted={this.clearCompleted}
           TodosLeft={TodosLeft(listTodos).length}
           Todos={listTodos.length}
+          Footerinfo={status}
         />
-        
       </div>
+
+       <Footerinfo/>
+    </>
     );
   }
 }
